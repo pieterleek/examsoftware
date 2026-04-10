@@ -1,0 +1,41 @@
+<!--
+Security toets  
+Onderdeel van de security toets. Deze HTML pagina hoef je aan te passen, hij is helemaal klaar. 
+Je hoeft alleen maar de login.php te maken en de code daarin aan te passen zodat het veilig werkt.
+-->
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/cssa2?family=Manrope:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+	<main class="page-shell">
+		<section class="brand-panel" aria-hidden="true">
+			<div class="brand-glow"></div>
+			<p class="brand-tag">Secure Access</p>
+			<h1>Welkom Paashaas</h1>
+			<p class="brand-copy">Log in om verder te gaan naar je dashboard.</p>
+		</section>
+		<section class="login-panel">
+			<form class="login-form" action="login.php" method="post" autocomplete="on">
+				<h2>Inloggen</h2>
+				<p class="subtitle">Vul je gegevens in</p>
+
+				<label for="username">Username</label>
+				<input id="username" name="username" type="text" placeholder="jouw gebruikersnaam" required>
+
+				<label for="password">Password</label>
+				<input id="password" name="password" type="password" placeholder="jouw wachtwoord" required>
+
+				<button type="submit">Log in</button>
+			</form>
+		</section>
+	</main>
+</body>
+</html>

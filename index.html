@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pieterleek.nl</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&display=swap');
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #0d0d0d;
+      --fg: #c8c8c8;
+      --dim: #3a3a3a;
+      --accent: #e8e0d0;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 300;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+
+    /* Subtle grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      text-align: left;
+    }
+
+    .domain {
+      font-size: clamp(1rem, 3vw, 1.35rem);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 0.6em;
+      height: 1.1em;
+      background: var(--accent);
+      margin-left: 3px;
+      vertical-align: middle;
+      animation: blink 1.1s step-end infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+
+    .rule {
+      width: 100%;
+      height: 1px;
+      background: var(--dim);
+      margin: 1.4rem 0;
+    }
+
+    .status {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      color: var(--dim);
+      text-transform: uppercase;
+    }
+
+    /* Fade in on load */
+    main {
+      opacity: 0;
+      animation: fadein 0.9s ease 0.15s forwards;
+    }
+
+    @keyframes fadein {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="domain">pieterleek.nl<span class="cursor"></span></div>
+    <div class="rule"></div>
+    <div class="status">There is nothing here. Go away… or stay long enough to become something.</div>
+  </main>
+</body>
+</html>
